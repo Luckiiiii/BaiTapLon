@@ -1,4 +1,4 @@
-package com.example.btl;
+package com.example.englishhh;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -16,18 +16,17 @@ public class ChuDe extends AppCompatActivity {
         AnhXa();
     }
     private void AnhXa(){
-        Button docSach= (Button) findViewById(R.id.doc_sach);
-        Button tuVung = (Button) findViewById(R.id.tu_vung);
-        Button game = (Button) findViewById(R.id.game);
+        Button tracNghiem = (Button) findViewById(R.id.trac_nghiem);
         Button next = (Button) findViewById(R.id.next);
         Button back = (Button) findViewById(R.id.back);
-        docSach.setOnClickListener(new View.OnClickListener() {
+
+        tracNghiem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent( ChuDe.this, DocSach.class);
-                startActivity(intent);
+                startActivity(new Intent(ChuDe.this,Quiz.class));
             }
         });
+
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

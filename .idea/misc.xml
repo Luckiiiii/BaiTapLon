@@ -3,9 +3,22 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Project kotlin/BTL/app/src/main/res/drawable/round_back_green10.xml" value="0.26205128205128203" />
+        <entry key="..\:/Project kotlin/BTL/app/src/main/res/drawable/round_back_light_yellow10.xml" value="0.25052083333333336" />
+        <entry key="..\:/Project kotlin/BTL/app/src/main/res/drawable/round_back_orange20.xml" value="0.25052083333333336" />
+        <entry key="..\:/Project kotlin/BTL/app/src/main/res/drawable/round_back_red10.xml" value="0.25052083333333336" />
+        <entry key="..\:/Project kotlin/BTL/app/src/main/res/drawable/round_back_white10.xml" value="0.26614583333333336" />
+        <entry key="..\:/Project kotlin/BTL/app/src/main/res/drawable/round_back_white_stroke10.xml" value="0.25052083333333336" />
+        <entry key="..\:/Project kotlin/BTL/app/src/main/res/drawable/round_back_white_stroke2_10.xml" value="0.25052083333333336" />
         <entry key="..\:/Project kotlin/BTL/app/src/main/res/layout/activity_chu_de.xml" value="0.20199275362318841" />
         <entry key="..\:/Project kotlin/BTL/app/src/main/res/layout/activity_doc_sach.xml" value="0.25" />
-        <entry key="..\:/Project kotlin/BTL/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Project kotlin/BTL/app/src/main/res/layout/activity_doc_sach_web.xml" value="0.21875" />
+        <entry key="..\:/Project kotlin/BTL/app/src/main/res/layout/activity_main.xml" value="0.16956521739130434" />
+        <entry key="..\:/Project kotlin/BTL/app/src/main/res/layout/activity_quiz.xml" value="0.2" />
+        <entry key="..\:/Project kotlin/BTL/app/src/main/res/layout/activity_quiz2.xml" value="0.234375" />
+        <entry key="..\:/Project kotlin/BTL/app/src/main/res/layout/activity_quiz_results.xml" value="0.21064814814814814" />
+        <entry key="..\:/Project kotlin/BTL/app/src/main/res/layout/activity_video.xml" value="0.2" />
+        <entry key="..\:/Project kotlin/BTL/app/src/main/res/layout/activity_video_english.xml" value="0.1" />
         <entry key="..\:/Project kotlin/BTL/app/src/main/res/layout/truyen.xml" value="0.1140625" />
       </map>
     </option>

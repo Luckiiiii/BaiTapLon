@@ -4,41 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:hwads="http://schemas.android.com/apk/res-auto"
     android:background="#CDB3B3"
+    android:id="@+id/rootview"
     tools:context=".MainActivity">
 
     <Button
         android:id="@+id/co_ban"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:text="Co ban"
+        android:layout_marginTop="224dp"
+        android:text="Bắt đầu học!  "
         app:layout_constraintEnd_toEndOf="@+id/textView"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/textView"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-    <Button
-        android:id="@+id/trung_cap"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:text="Trung Cap"
-        app:layout_constraintEnd_toEndOf="@+id/co_ban"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/co_ban"
-        app:layout_constraintTop_toBottomOf="@+id/co_ban" />
-
-    <Button
-        android:id="@+id/nang_cao"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:text="Nang cao"
-        app:layout_constraintEnd_toEndOf="@+id/trung_cap"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/trung_cap"
-        app:layout_constraintTop_toBottomOf="@+id/trung_cap" />
 
     <TextView
         android:id="@+id/textView"
@@ -53,4 +33,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+
+    <com.huawei.hms.ads.banner.BannerView
+        android:id="@+id/banner"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="64dp"
+        app:layout_constraintEnd_toEndOf="@+id/co_ban"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/co_ban"
+        app:layout_constraintTop_toBottomOf="@+id/co_ban"
+        hwads:adId="testw6vs28auh3"
+        hwads:bannerSize="BANNER_SIZE_360_57" />
+
 </android.support.constraint.ConstraintLayout>

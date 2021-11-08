@@ -11,33 +11,33 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="84dp"
-        android:text="Đọc Sách "
+        android:text="Đọc sách online"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/tu_vung"
+        android:id="@+id/trac_nghiem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
-        android:text="Từ Vựng"
+        android:text="Trắc nghiệm từ vựng"
         app:layout_constraintEnd_toEndOf="@+id/doc_sach"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/doc_sach"
         app:layout_constraintTop_toBottomOf="@+id/doc_sach" />
 
     <Button
-        android:id="@+id/game"
+        android:id="@+id/video"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:text="Game "
-        app:layout_constraintEnd_toEndOf="@+id/tu_vung"
+        android:layout_marginTop="48dp"
+        android:text="Xen video tiếng anh"
+        app:layout_constraintEnd_toEndOf="@+id/trac_nghiem"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/tu_vung"
-        app:layout_constraintTop_toBottomOf="@+id/tu_vung" />
+        app:layout_constraintStart_toStartOf="@+id/trac_nghiem"
+        app:layout_constraintTop_toBottomOf="@+id/trac_nghiem" />
 
     <Button
         android:id="@+id/next"
@@ -49,7 +49,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/game" />
+        app:layout_constraintStart_toEndOf="@+id/video" />
 
     <Button
         android:id="@+id/back"
@@ -59,6 +59,6 @@
         android:layout_marginBottom="100dp"
         android:text="Back"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/game"
+        app:layout_constraintEnd_toStartOf="@+id/video"
         app:layout_constraintStart_toStartOf="parent" />
 </android.support.constraint.ConstraintLayout>
