@@ -1,70 +1,50 @@
 package com.example.notekeeper;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
-import android.view.View;
+import android.util.Log;
 
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.notekeeper.databinding.ActivityMainBinding;
-
-import android.view.Menu;
-import android.view.MenuItem;
-import android.widget.ArrayAdapter;
-import android.widget.Spinner;
-
-import java.util.List;
+import com.huawei.hmf.tasks.Task;
+import com.huawei.hms.common.ApiException;
+import com.huawei.hms.support.account.AccountAuthManager;
+import com.huawei.hms.support.account.request.AccountAuthParams;
+import com.huawei.hms.support.account.request.AccountAuthParamsHelper;
+import com.huawei.hms.support.account.result.AuthAccount;
+import com.huawei.hms.support.account.service.AccountAuthService;
 
 public class MainActivity extends AppCompatActivity {
 
-    private AppBarConfiguration appBarConfiguration;
-    private ActivityMainBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
 
-        binding = ActivityMainBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
-
-        setSupportActionBar(binding.toolbar);
-        Spinner spinnerCourses = findViewById(R.id.spinner_courses);
-        List<CourseInfo> courses = DataManager.getInstance().getCourses();
-        ArrayAdapter<CourseInfo> adapterCourses =
-                new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, courses);
-        adapterCourses.setDropDownViewResource(android.R.layout.simple_list_item_1);
-        spinnerCourses.setAdapter(adapterCourses);
-
-
-
+        AccountAuthParams authParams = new AccountAuthParamsHelper(AccountAuthParams.DEFAULT_AUTH_REQUEST_PARAM).setIdToken().createParams();
+        AccountAuthService service = AccountAuthManager.getService(MainActivity.this, authParams);
+        startActivityForResult(service.getSignInIntent(), 8888);
 
     }
-
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 8888) {
+            Task<AuthAccount> authAccountTask = AccountAuthManager.parseAuthResultFromIntent(data);
+            if (authAccountTask.isSuccessful()) {
+                AuthAccount authAccount = authAccountTask.getResult();
+                Log.i("Admin", "idToken:" + authAccount.getIdToken());
+                Intent intent = new Intent(MainActivity.this,MainActivity.class);
+                startActivity(intent);
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
+            } else {
+                // The sign-in failed. No processing is required. Logs are recorded for fault locating.
+                Log.e("Admin", "sign in failed : " +((ApiException) authAccountTask.getException()).getStatusCode());
+            }
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
         }
-
-        return super.onOptionsItemSelected(item);
     }
-
 
 }
